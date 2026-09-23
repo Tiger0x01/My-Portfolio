@@ -11,13 +11,12 @@ export const Hero: React.FC = () => {
   const t = translations[language].hero;
   const isDark = theme === 'dark';
 
-  // إعدادات حركة الماوس (بارالاكس 3D أوسع وأوضح)
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseXSpring = useSpring(x, { stiffness: 200, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 200, damping: 20 });
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['15deg', '-15deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-15deg', '15deg']);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['10deg', '-10deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-10deg', '10deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -36,10 +35,7 @@ export const Hero: React.FC = () => {
 
   const handleDownloadCV = (e: React.MouseEvent) => {
     e.preventDefault();
-    // 1. فتح في تاب جديدة للعرض
     window.open(cvFile, '_blank');
-    
-    // 2. تحميل الملف في نفس اللحظة
     const link = document.createElement('a');
     link.href = cvFile;
     link.download = 'Mohamed_Elnemr_CV.pdf';
@@ -53,11 +49,9 @@ export const Hero: React.FC = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden"
     >
-      {/* Subtle monochrome ambient light orbs */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-white/[0.03] blur-[120px] pointer-events-none" />
       <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white/[0.02] blur-[100px] pointer-events-none" />
 
-      {/* Subtle grid pattern */}
       <div
         className={`absolute inset-0 pointer-events-none opacity-40 ${
           isDark ? 'bg-grid-pattern-dark' : 'bg-grid-pattern-light'
@@ -66,7 +60,6 @@ export const Hero: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Main Typography Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-start text-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -74,13 +67,13 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-2 mb-6"
             >
-              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.08] text-balance">
+              <h1 className="tracking-tight text-balance">
                 <span className={`block font-light text-2xl sm:text-3xl lg:text-4xl mb-2 ${
                   isDark ? 'text-neutral-400' : 'text-neutral-600'
                 }`}>
                   {t.greeting}
                 </span>
-                <span className={isDark ? 'text-white' : 'text-black'}>
+                <span className={`thmanyah-display block text-4xl sm:text-6xl lg:text-7xl ${isDark ? 'text-white' : 'text-black'}`}>
                   {t.name}
                 </span>
               </h1>
@@ -133,18 +126,18 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Portrait Showcase Column (5 cols) with Stronger 3D Parallax */}
+          {/* كارد الصورة بنسبة عرض/ارتفاع إيديتوريال عمودية (4/5) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full max-w-md"
+              className="relative w-full max-w-xs sm:max-w-sm"
             >
               <div
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                className={`relative rounded-3xl p-5 sm:p-6 overflow-hidden transition-all duration-500 ${
+                className={`relative rounded-3xl p-4 sm:p-5 overflow-hidden transition-all duration-500 ${
                   isDark
                     ? 'bg-neutral-900/60 backdrop-blur-2xl border border-white/15 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)]'
                     : 'bg-white/85 backdrop-blur-2xl border border-black/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.9)]'
@@ -157,19 +150,21 @@ export const Hero: React.FC = () => {
                     rotateY,
                     transformStyle: 'preserve-3d',
                   }}
-                  className="relative aspect-square rounded-2xl overflow-hidden bg-neutral-950 flex items-center justify-center p-3"
+                  className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-950 flex items-center justify-center"
                 >
+                  {/* الكيرف المنحني الخلفي */}
+                  <div className={`ambient-curve-ring ${isDark ? 'border-white/25 text-white' : 'border-black/20 text-black'}`} />
+
                   <motion.div
-                    style={{ translateZ: '40px' }}
-                    className="w-full h-full rounded-xl overflow-hidden relative shadow-2xl"
+                    style={{ translateZ: '30px' }}
+                    className="w-full h-full rounded-2xl overflow-hidden relative shadow-2xl z-10"
                   >
                     <img
                       src={heroPortrait}
                       alt={t.name}
-                      className="w-full h-full object-cover object-top scale-95 grayscale contrast-110 filter transition-transform duration-500"
+                      className="w-full h-full object-cover object-top filter grayscale contrast-110 transition-transform duration-500 hover:scale-105"
                       loading="eager"
                     />
-                    {/* Subtle glass reflection overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                   </motion.div>
                 </motion.div>

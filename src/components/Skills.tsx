@@ -11,7 +11,7 @@ export const Skills: React.FC = () => {
   const isDark = theme === 'dark';
   const [activeTab, setActiveTab] = useState<string>(initialSkills[0].id);
 
-const getCategoryIcon = (id: string) => {
+  const getCategoryIcon = (id: string) => {
     switch (id) {
       case 'cat-languages': return <Code2 className="w-4 h-4" />;
       case 'cat-ml': return <Cpu className="w-4 h-4" />;
@@ -23,7 +23,6 @@ const getCategoryIcon = (id: string) => {
       default: return <Cpu className="w-4 h-4" />;
     }
   };
-
 
   const activeCategory = initialSkills.find(cat => cat.id === activeTab) || initialSkills[0];
 
@@ -46,10 +45,9 @@ const getCategoryIcon = (id: string) => {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.12] mb-4 text-balance">
                 {t.subtitle}
               </h2>
-
             </div>
 
-            {/* أزرار التصنيفات (رأسية في الشاشات الكبيرة، أفقية في الموبايل) */}
+            {/* أزرار التصنيفات */}
             <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 hide-scrollbar">
               {initialSkills.map((cat) => {
                 const isActive = activeTab === cat.id;
@@ -86,13 +84,13 @@ const getCategoryIcon = (id: string) => {
                 transition={{ duration: 0.3 }}
                 className="space-y-8"
               >
-                {/* رأس القسم النشط (الوصف وعدد المهارات) */}
+                {/* رأس القسم النشط */}
                 <div className={`flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
-                  <p className={`text-lg sm:text-xl font-medium max-w-md leading-relaxed ${isDark ? 'text-neutral-200' : 'text-neutral-800'}`}>
+                  <p className={`text-base sm:text-lg font-normal max-w-md leading-relaxed ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
                     {activeCategory.description[language]}
                   </p>
                   <span className="text-xs font-mono uppercase tracking-widest opacity-50 shrink-0">
-                    {activeCategory.skills.length} {language === 'ar' ? 'مهارات متخصصة' : 'Competencies'}
+                    {activeCategory.skills.length} {language === 'ar' ? 'أداة/تقنية' : 'items'}
                   </span>
                 </div>
 
@@ -104,27 +102,27 @@ const getCategoryIcon = (id: string) => {
                       initial={{ opacity: 0, scale: 0.98 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: idx * 0.05 }}
-                      className={`group p-6 rounded-3xl border transition-all duration-300 flex flex-col justify-between min-h-[180px] ${
+                      className={`group p-6 rounded-3xl border transition-all duration-300 flex flex-col justify-between min-h-[160px] ${
                         isDark
                           ? 'bg-white/[0.02] border-white/10 hover:border-white/30 hover:bg-white/[0.04]'
                           : 'bg-black/[0.02] border-black/10 hover:border-black/30 hover:bg-black/[0.04]'
                       }`}
                     >
                       <div>
-                        {/* مستوى المهارة والنقطة */}
-                        <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-6 opacity-60">
+                        {/* مستوى المهارة والنقطة الهادئة */}
+                        <div className="flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest mb-4 opacity-50">
                           <span>{skill.level}</span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-current opacity-40 group-hover:bg-emerald-500 group-hover:opacity-100 transition-colors duration-300" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-current opacity-30 group-hover:opacity-80 transition-colors duration-300" />
                         </div>
                         
                         {/* اسم المهارة */}
-                        <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-balance text-current">
+                        <h3 className="text-lg sm:text-xl font-bold tracking-tight text-balance text-current">
                           {skill.name}
                         </h3>
                       </div>
 
-                      {/* نطاق التركيز الهندسي */}
-                      <div className={`pt-5 mt-5 border-t ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+                      {/* نطاق الاستخدام */}
+                      <div className={`pt-4 mt-4 border-t ${isDark ? 'border-white/10' : 'border-black/10'}`}>
                         <p className={`text-xs font-mono leading-relaxed transition-opacity duration-300 ${
                           isDark ? 'text-neutral-400 group-hover:text-neutral-200' : 'text-neutral-600 group-hover:text-neutral-900'
                         }`}>

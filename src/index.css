@@ -1,119 +1,97 @@
 @import "tailwindcss";
 
-/* 1. تعريف خطوط ثمانية بالأوزان المختلفة */
 @font-face {
-  font-family: 'ThmanyahSans';
-  src: url('./font/thmanyahsans-Light.woff2') format('woff2');
+  font-family: "Thmanyah Sans";
+  src: url("/thmanyahsans/woff2/thmanyahsans-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ThmanyahSans';
-  src: url('./font/thmanyahsans-Regular.woff2') format('woff2');
+  font-family: "Thmanyah Sans";
+  src: url("/thmanyahsans/woff2/thmanyahsans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ThmanyahSans';
-  src: url('./font/thmanyahsans-Medium.woff2') format('woff2');
+  font-family: "Thmanyah Sans";
+  src: url("/thmanyahsans/woff2/thmanyahsans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ThmanyahSans';
-  src: url('./font/thmanyahsans-Bold.woff2') format('woff2');
+  font-family: "Thmanyah Sans";
+  src: url("/thmanyahsans/woff2/thmanyahsans-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ThmanyahSans';
-  src: url('./font/thmanyahsans-Black.woff2') format('woff2');
+  font-family: "Thmanyah Sans";
+  src: url("/thmanyahsans/woff2/thmanyahsans-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
-/* 2. تعيين خط ثمانية ليكون الخط الوحيد للموقع */
 @layer base {
   :root {
-    --font-sans: 'ThmanyahSans', system-ui, -apple-system, sans-serif;
-    --font-arabic-sans: 'ThmanyahSans', system-ui, sans-serif;
+    --font-sans: "Thmanyah Sans", system-ui, sans-serif;
   }
 
-  [dir="rtl"] {
-    font-family: var(--font-arabic-sans);
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
-  [dir="ltr"] {
-    font-family: var(--font-sans);
+  body {
+    margin: 0;
+    font-family: "Thmanyah Sans", system-ui, sans-serif;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+.thmanyah-display {
+  font-family: "Thmanyah Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.75rem, 6.2vw, 5.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-rendering: optimizeLegibility;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(120, 120, 120, 0.25);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(120, 120, 120, 0.5);
+html[dir="rtl"] .thmanyah-display {
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
-.glass-panel-dark {
-  background: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.08), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+.ambient-curve-ring {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+  pointer-events: none;
+  opacity: 0.18;
 }
 
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), 0 20px 40px -15px rgba(0, 0, 0, 0.06);
+[dir="rtl"] {
+  font-family: "Thmanyah Sans", system-ui, sans-serif;
 }
 
-.glass-pill-dark {
-  background: rgba(25, 25, 25, 0.6);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
-}
-
-.glass-pill-light {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 0, 0, 0.09);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
-}
-
-.bg-grid-pattern-dark {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.bg-grid-pattern-light {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
-  background-size: 32px 32px;
+[dir="ltr"] {
+  font-family: "Thmanyah Sans", system-ui, sans-serif;
 }

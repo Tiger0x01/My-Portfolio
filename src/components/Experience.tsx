@@ -14,13 +14,13 @@ export const Experience: React.FC = () => {
     <section id="experience" className="py-24 lg:py-32 relative overflow-hidden border-b border-current/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* شريط التصنيف العلوي الهادئ */}
+        {/* شريط التصنيف العلوي */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-xs font-mono tracking-[0.2em] opacity-40 uppercase">03 / {t.sectionTitle}</span>
           <div className="h-px flex-1 bg-current opacity-10" />
         </div>
 
-        {/* التخطيط التحريري السويسري للخبرات (Editorial Rows) */}
+        {/* صفوف الخبرات */}
         <div className={`border-t ${isDark ? 'border-white/10' : 'border-black/10'} divide-y ${isDark ? 'divide-white/10' : 'divide-black/10'}`}>
           {initialExperience.map((exp, idx) => (
             <motion.div
@@ -31,7 +31,7 @@ export const Experience: React.FC = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start group"
             >
-              {/* العمود الجانبي للوقت والموقع (4 أعمدة - ثابت أثناء التصفح) */}
+              {/* العمود الجانبي: الوقت والموقع */}
               <div className="lg:col-span-4 space-y-2 lg:sticky lg:top-28">
                 <span className="text-xs font-mono tabular-nums opacity-60 block tracking-wider">
                   {exp.period[language]}
@@ -42,7 +42,7 @@ export const Experience: React.FC = () => {
                 </div>
               </div>
 
-              {/* العمود الرئيسي للتفاصيل (8 أعمدة) */}
+              {/* العمود الرئيسي: التفاصيل */}
               <div className="lg:col-span-8 space-y-6">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-current mb-2">
@@ -57,7 +57,7 @@ export const Experience: React.FC = () => {
                   {exp.description[language]}
                 </p>
 
-                {/* الإنجازات */}
+                {/* الإنجازات العملية */}
                 <div className="space-y-3 pt-2">
                   <div className="text-xs font-mono uppercase tracking-widest opacity-40">
                     {t.keyAchievements}
@@ -74,7 +74,7 @@ export const Experience: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* التقنيات (Stack) */}
+                {/* التك Stacks */}
                 <div className="pt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono opacity-60">
                   {exp.technologies.map((tech, tIdx) => (
                     <React.Fragment key={tech}>

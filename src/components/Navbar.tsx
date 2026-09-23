@@ -31,35 +31,69 @@ export const Navbar: React.FC = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className={`flex items-center justify-between px-5 py-2.5 rounded-full transition-all duration-300 ${
+          <nav className={`flex items-center justify-between gap-4 px-5 py-2.5 rounded-full transition-all duration-300 ${
             isDark
-              ? scrolled ? 'bg-black/75 backdrop-blur-xl border border-white/10' : 'bg-black/40 backdrop-blur-md border border-white/5'
-              : scrolled ? 'bg-white/85 backdrop-blur-xl border border-black/10' : 'bg-white/50 backdrop-blur-md border border-black/5'
+              ? scrolled ? 'bg-neutral-900/85 backdrop-blur-xl border border-white/10 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)]' : 'bg-neutral-900/50 backdrop-blur-md border border-white/5'
+              : scrolled ? 'bg-white/90 backdrop-blur-xl border border-black/10 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.08)]' : 'bg-white/60 backdrop-blur-md border border-black/5'
           }`}>
-            <a href="#home" className={`text-sm md:text-base font-semibold tracking-tight transition-opacity hover:opacity-75 ${isDark ? 'text-white' : 'text-black'}`}>
+            {/* الشعار بوزن خط متناسق ومستقر */}
+            <a 
+              href="#home" 
+              className={`text-sm sm:text-base font-bold tracking-tight shrink-0 transition-opacity hover:opacity-75 ${
+                isDark ? 'text-white' : 'text-neutral-900'
+              }`}
+            >
               {language === 'ar' ? 'محـــــمد النـــــمر' : 'Mohamed Elnemr'}
             </a>
 
-            <div className="hidden lg:flex items-center gap-6 text-xs font-medium tracking-wide">
+            {/* روابط التنقل للشاشات الكبيرة */}
+            <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 text-xs font-medium tracking-wide">
               {navLinks.map((link) => (
-                <a key={link.href} href={link.href} className={`transition-colors relative py-1 hover:text-white group ${isDark ? 'text-neutral-400 hover:text-white' : 'text-neutral-600 hover:text-black'}`}>
+                <a 
+                  key={link.href} 
+                  href={link.href} 
+                  className={`transition-colors relative py-1 group ${
+                    isDark 
+                      ? 'text-neutral-400 hover:text-white' 
+                      : 'text-neutral-600 hover:text-black'
+                  }`}
+                >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-200 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 right-0 w-0 h-px bg-current transition-all duration-200 group-hover:w-full mx-auto" />
                 </a>
               ))}
             </div>
 
-            <div className="flex items-center gap-2">
-              <button onClick={toggleLanguage} aria-label="Switch Language" className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-medium transition-all ${isDark ? 'hover:bg-white/10 text-neutral-300' : 'hover:bg-black/5 text-neutral-700'}`}>
-                <Globe className="w-3.5 h-3.5" />
+            {/* أزرار التحكم */}
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              <button 
+                onClick={toggleLanguage} 
+                aria-label="Switch Language" 
+                className={`flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${
+                  isDark ? 'hover:bg-white/10 text-neutral-300' : 'hover:bg-black/5 text-neutral-700'
+                }`}
+              >
+                <Globe className="w-3.5 h-3.5 opacity-70" />
                 <span>{language === 'ar' ? 'EN' : 'عربي'}</span>
               </button>
 
-              <button onClick={toggleTheme} aria-label={t.toggleTheme} className={`p-1.5 rounded-full transition-all ${isDark ? 'hover:bg-white/10 text-neutral-300' : 'hover:bg-black/5 text-neutral-700'}`}>
+              <button 
+                onClick={toggleTheme} 
+                aria-label={t.toggleTheme} 
+                className={`p-2 rounded-full transition-all ${
+                  isDark ? 'hover:bg-white/10 text-neutral-300' : 'hover:bg-black/5 text-neutral-700'
+                }`}
+              >
                 {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
               </button>
 
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation menu" className={`lg:hidden p-1.5 rounded-full transition-colors ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+                aria-label="Toggle navigation menu" 
+                className={`lg:hidden p-2 rounded-full transition-colors ${
+                  isDark ? 'hover:bg-white/10 text-neutral-300' : 'hover:bg-black/5 text-neutral-700'
+                }`}
+              >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
@@ -67,12 +101,31 @@ export const Navbar: React.FC = () => {
         </div>
       </header>
 
+      {/* قائمة الموبايل */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className={`fixed inset-0 z-30 lg:hidden flex flex-col justify-between p-6 pt-28 backdrop-blur-2xl ${isDark ? 'bg-black/92 text-white' : 'bg-white/95 text-black'}`}>
-            <div className="flex flex-col gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            exit={{ opacity: 0, y: -10 }} 
+            transition={{ duration: 0.2, ease: 'easeOut' }} 
+            className={`fixed inset-0 z-30 lg:hidden flex flex-col justify-between p-6 pt-28 backdrop-blur-2xl ${
+              isDark ? 'bg-neutral-950/95 text-white' : 'bg-white/98 text-black'
+            }`}
+          >
+            <div className="flex flex-col gap-5">
               {navLinks.map((link, idx) => (
-                <motion.a key={link.href} href={link.href} initial={{ opacity: 0, x: isRtl ? 20 : -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.04 }} onClick={() => setMobileMenuOpen(false)} className={`text-xl font-medium py-2 border-b ${isDark ? 'border-white/15 text-neutral-300' : 'border-black/15 text-neutral-700'}`}>
+                <motion.a 
+                  key={link.href} 
+                  href={link.href} 
+                  initial={{ opacity: 0, x: isRtl ? 15 : -15 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  transition={{ delay: idx * 0.05, duration: 0.3 }} 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className={`text-xl font-bold tracking-tight py-2.5 border-b ${
+                    isDark ? 'border-white/10 text-neutral-200' : 'border-black/10 text-neutral-800'
+                  }`}
+                >
                   {link.label}
                 </motion.a>
               ))}

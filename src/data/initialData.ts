@@ -1,42 +1,36 @@
 import { Project, ExperienceItem, SkillCategory, PublicationItem, ApproachPillar } from '../types/portfolio';
 
-// Local high-fidelity generated images
 import heroPortrait from '../assets/images/hero.png';
-
-
-
 import bayanImg from '../assets/images/bayan.png';
 import bhaavImg from '../assets/images/bhaav.jpg';
 import creditImg from '../assets/images/credit.png';
 import gestureImg from '../assets/images/gesture.png';
 import libraryImg from '../assets/images/library.png';
-import logoImg from '../assets/images/logo.png';
 import monkeyImg from '../assets/images/monkey.png';
 import mustawfiImg from '../assets/images/mustawfi.png';
 import nosoosImg from '../assets/images/nosoos.png';
-
 
 export { heroPortrait };
 
 export const initialExperience: ExperienceItem[] = [
   {
     id: 'exp-1',
-    role: { en: 'Microsoft Machine Learning Engineer Trainee', ar: 'متدرب هندسة تعلم الآلة - Microsoft DEPI' },
+    role: { en: 'Microsoft Machine Learning Trainee', ar: 'متدرب تعلم آلة - Microsoft DEPI' },
     company: { en: 'DEPI (Digital Egypt Pioneers Initiative)', ar: 'مبادرة رواد مصر الرقمية (DEPI)' },
     period: { en: 'Jun 2025 — Dec 2025', ar: 'يونيو 2025 — ديسمبر 2025' },
     location: { en: 'Egypt', ar: 'مصر' },
     description: { 
-      en: 'Engineered and deployed end-to-end ML pipelines on Azure, applying MLOps practices for model deployment, experiment tracking, versioning, and monitoring using MLflow.', 
-      ar: 'هندسة ونشر خطوط أنابيب تعلم آلة متكاملة على Azure مع تطبيق ممارسات MLOps لنشر النماذج وتتبع التجارب والإصدارات والمراقبة باستخدام MLflow.' 
+      en: 'Trained on Azure ML workflows, experiment tracking with MLflow, and baseline CV/NLP model training.', 
+      ar: 'التدريب العملي على مسارات Azure ML، تتبع التجارب بـ MLflow، وتدريب نماذج الرؤية والنصوص.' 
     },
     achievements: {
       en: [
-        'Developed Deep Learning models for NLP and Computer Vision tasks, applying transfer learning and attention architectures to improve inference accuracy.',
-        'Built Generative AI solutions and RAG-based applications utilizing advanced Prompt Engineering techniques tailored for diverse datasets.'
+        'Fine-tuned transfer learning models for custom NLP and image classification datasets.',
+        'Built baseline RAG scripts and tested prompt patterns for unstructured document QA.'
       ],
       ar: [
-        'تطوير نماذج تعلم عميق لمهام معالجة اللغات الطبيعية (NLP) والرؤية الحاسوبية، وتطبيق التعلم بالتحويل (Transfer Learning) لرفع دقة الاستنتاج.',
-        'بناء حلول ذكاء اصطناعي توليدي وتطبيقات تعتمد على RAG مع توظيف تقنيات هندسة الأوامر المتقدمة.'
+        'تطبيق Transfer Learning وتدريب نماذج تصنيف للنصوص والصور.',
+        'تجارب عملية على بناء RAG وبيانات غير مرتبة.'
       ]
     },
     technologies: ['Azure AI', 'MLflow', 'NLP', 'Computer Vision', 'Generative AI', 'RAG']
@@ -48,42 +42,40 @@ export const initialExperience: ExperienceItem[] = [
     period: { en: 'May 2026 — Jul 2026', ar: 'مايو 2026 — يوليو 2026' },
     location: { en: 'Egypt', ar: 'مصر' },
     description: { 
-      en: 'Completed a comprehensive 126-hour Generative AI internship focused on modern AI concepts, LLM applications, and practical Generative AI workflows.', 
-      ar: 'إتمام تدريب مكثف لمدة 126 ساعة في الذكاء الاصطناعي التوليدي يركز على المفاهيم الحديثة وتطبيقات نماذج اللغة الكبيرة (LLMs).' 
+      en: '126-hour practical training focused on LLM integration, prompt tuning, and building retrieval-augmented workflows.', 
+      ar: 'تدريب مكثف (126 ساعة) عملي على تكامل نماذج LLMs، هندسة الأوامر، وتطبيقات الاسترجاع (RAG).' 
     },
     achievements: {
       en: [
-        'Built end-to-end AI applications leveraging LLMs, prompt engineering, and retrieval-augmented generation (RAG) to solve practical business scenarios.'
+        'Implemented local/API-backed LLM pipelines solving domain-specific text tasks.'
       ],
       ar: [
-        'بناء تطبيقات ذكاء اصطناعي متكاملة باستخدام LLMs، وهندسة الأوامر، وRAG لحل سيناريوهات أعمال عملية.'
+        'تطوير سكربتات وتطبيقات تعتمد على LLM لمهام معالجة النصوص العملية.'
       ]
     },
     technologies: ['LLMs', 'RAG', 'Prompt Engineering']
   },
   {
     id: 'exp-3',
-    role: { en: 'Python Track Trainee', ar: 'متدرب مسار بايثون' },
+    role: { en: 'Python / Backend Trainee', ar: 'متدرب بايثون وباك إند' },
     company: { en: 'Information Technology Institute (ITI)', ar: 'معهد تكنولوجيا المعلومات (ITI)' },
     period: { en: 'Jan 2025 — Feb 2025', ar: 'يناير 2025 — فبراير 2025' },
     location: { en: 'Egypt', ar: 'مصر' },
     description: { 
-      en: 'Developed scalable backend web applications using Django, integrating user authentication and CRUD functionality.', 
-      ar: 'تطوير تطبيقات ويب خلفية قابلة للتوسع باستخدام Django مع دمج المصادقة ووظائف CRUD.' 
+      en: 'Backend web development track focusing on Django, PostgreSQL schemas, and RESTful routing.', 
+      ar: 'مسار تطوير الويب الخلفي باستخدام Django وقواعد بيانات PostgreSQL وربط الجداول.' 
     },
     achievements: {
       en: [
-        'Designed relational database architectures using PostgreSQL and integrated them with Django ORM.'
+        'Wrote custom Django ORM queries, auth flows, and PostgreSQL database schemas.'
       ],
       ar: [
-       ' صرت على تصميم هياكل قواعد بيانات علائقية باستخدام PostgreSQL وربطها بـ Django ORM.'
+        'تصميم وبناء قواعد بيانات علائقية بـ PostgreSQL وربطها بـ Django ORM.'
       ]
     },
     technologies: ['Python', 'Django', 'PostgreSQL', 'Django ORM']
   }
 ];
-
-
 
 export const initialProjects: Project[] = [
   {
@@ -91,12 +83,12 @@ export const initialProjects: Project[] = [
     slug: 'mustawfi',
     title: { en: 'MUSTAWFI', ar: 'مستوفي (MUSTAWFI)' },
     shortDescription: { 
-      en: 'Smart loan eligibility system combining Computer Vision, OCR, and ML with a React/FastAPI stack.', 
-      ar: 'نظام ذكي لأهلية القروض يجمع بين الرؤية الحاسوبية، التعرف البصري على الحروف (OCR)، وتعلم الآلة.' 
+      en: 'Loan eligibility checker parsing scanned/handwritten forms via custom OCR + FastAPI + React.', 
+      ar: 'نظام فحص أهلية قروض يقرأ النماذج المطبوعة/المكتوبة بـ OCR مخصص مع FastAPI و React.' 
     },
     fullDescription: { 
-      en: 'MUSTAWFI is an intelligent loan application processing platform that extracts structured info from forms and predicts loan eligibility with confidence scores.', 
-      ar: 'مستوفي هي منصة ذكية لمعالجة طلبات القروض، تستخرج المعلومات الهيكلية من النماذج وتتنبأ بأهلية القرض مع عرض درجات الثقة للمراجع البشري.' 
+      en: 'Extracts structured data from loan apps, runs eligibility scoring, and presents confidence metrics in a React UI.', 
+      ar: 'بيطلع البيانات من الاستمارات المكتوبة أو المطبوعة، يحسب درجة الأهلية، ويعرض نسبة الثقة للمراجع.' 
     },
     category: 'ai',
     featured: true,
@@ -104,17 +96,17 @@ export const initialProjects: Project[] = [
     published: true,
     image: mustawfiImg, 
     gallery: [],
-    technologies: ['Python', 'FastAPI', 'OpenCV', 'NumPy', 'Scikit-learn', 'Custom OCR', 'React 19', 'TanStack Start', 'Tailwind CSS', 'Framer Motion', 'shadcn/ui'],
+    technologies: ['Python', 'FastAPI', 'OpenCV', 'NumPy', 'Scikit-learn', 'Custom OCR', 'React 19', 'Tailwind CSS', 'shadcn/ui'],
     githubUrl: 'https://github.com/Tiger0x01/MUSTAWFI',
     liveDemoUrl: 'https://mustawfi.vercel.app',
     caseStudy: {
-      overview: { en: 'Smart Loan Eligibility Intelligence.', ar: 'نظام ذكي لمعالجة أهلية القروض.' },
-      problem: { en: 'Manual processing of handwritten or printed loan forms.', ar: 'المعالجة اليدوية لنماذج القروض المكتوبة بخط اليد أو المطبوعة.' },
-      solution: { en: 'Automated workflow using Custom OCR for extraction and ML for eligibility prediction.', ar: 'سير عمل آلي يعتمد على OCR مخصص للاستخراج وتعلم الآلة لتوقع الأهلية.' },
-      architecture: { en: 'React 19 frontend + Python/FastAPI backend with OpenCV.', ar: 'واجهة أمامية بـ React 19 وخلفية Python/FastAPI مع OpenCV.' },
-      features: { en: ['Handwritten/printed data extraction', 'Human-in-the-loop verification', 'ML confidence scores', 'Visual decision factors'], ar: ['استخراج البيانات المطبوعة والمكتوبة يدوياً', 'نظام مراجعة بشرية للبيانات', 'درجات ثقة مدعومة بتعلم الآلة', 'عوامل قرار مرئية'] },
-      challenges: { en: 'Accurately extracting structured data from varied handwriting.', ar: 'استخراج البيانات الهيكلية بدقة من خطوط اليد المتنوعة.' },
-      results: { en: 'Automated data extraction and streamlined ML-based eligibility decisions.', ar: 'استخراج آلي للبيانات وقرارات أهلية مدعومة بتعلم الآلة.' }
+      overview: { en: 'Form OCR & Loan Scoring Pipeline.', ar: 'استخراج بيانات الاستمارات وتوقع الأهلية.' },
+      problem: { en: 'Manual entry and validation take too long for loan review queues.', ar: 'إدخال ومراجعة استمارات القروض يدوياً بيأخذ وقت طويل.' },
+      solution: { en: 'OpenCV/OCR extraction pipeline paired with a lightweight ML decision scoring script.', ar: 'مسار استخراج بالرؤية الحاسوبية مع نموذج تصنيف خفيف للأهلية.' },
+      architecture: { en: 'FastAPI REST backend + React 19 frontend.', ar: 'باك إند FastAPI مع فريم إند React 19.' },
+      features: { en: ['Field extraction', 'Human review toggle', 'Confidence score badges'], ar: ['استخراج الحقول', 'مراجعة يدوية سريعة', 'درجات الثقة بالقرار'] },
+      challenges: { en: 'Noise and layout variations in scanned/handwritten paper forms.', ar: 'تشويش واختلاف خطوط اليد في الورق الممسوح ضوئياً.' },
+      results: { en: 'Cuts manual typing effort down via structured auto-population.', ar: 'تقليل وقت الكتابة اليدوية عبر استخراج تلقائي ومنظم.' }
     }
   },
   {
@@ -122,12 +114,12 @@ export const initialProjects: Project[] = [
     slug: 'bhaav',
     title: { en: 'BHAAV', ar: 'بهاف (BHAAV)' },
     shortDescription: { 
-      en: 'AI-powered platform predicting house prices in the Indian real estate market.', 
-      ar: 'منصة مدعومة بالذكاء الاصطناعي لتوقع أسعار العقارات في السوق الهندي.' 
+      en: 'House price regression model for the Indian real estate market with a React interface.', 
+      ar: 'نموذج انحدار لتوقع أسعار العقارات في السوق الهندي مع واجهة React.' 
     },
     fullDescription: { 
-      en: 'BHAAV processes property characteristics through an ML pipeline and returns an estimated price via a clean React interface.', 
-      ar: 'تحلل منصة بهاف خصائص العقارات عبر خط أنابيب تعلم آلي لتقديم تقدير دقيق لسعر العقار من خلال واجهة React بسيطة.' 
+      en: 'Cleans real estate tabular data, trains regression estimators, and serves predictions via Vite/React.', 
+      ar: 'ينظف بيانات العقارات، يدرب نماذج الانحدار، ويعرض التقدير الفوري عبر واجهة ويب خفيفة.' 
     },
     category: 'ml',
     featured: true,
@@ -135,16 +127,16 @@ export const initialProjects: Project[] = [
     published: true,
     image: bhaavImg, 
     gallery: [],
-    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Joblib', 'React', 'Vite', 'TypeScript', 'Tailwind CSS'],
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Joblib', 'React', 'Vite', 'Tailwind CSS'],
     githubUrl: 'https://github.com/Tiger0x01/BHAAV',
     caseStudy: {
-      overview: { en: 'AI-Powered House Price Prediction.', ar: 'تنبؤ بأسعار العقارات مدعوم بالذكاء الاصطناعي.' },
-      problem: { en: 'Difficulty in estimating property prices accurately based on multiple attributes.', ar: 'صعوبة تقدير أسعار العقارات بدقة بناءً على خصائص متعددة.' },
-      solution: { en: 'Machine learning regression models analyzing location, area, and amenities.', ar: 'نماذج انحدار تحلل الموقع والمساحة والمرافق لتقديم سعر دقيق.' },
-      architecture: { en: 'ML pipeline with Scikit-learn + React TS UI.', ar: 'خط أنابيب بيانات بـ Scikit-learn مع واجهة React TS.' },
-      features: { en: ['Data preprocessing', 'Feature engineering', 'Property attribute analysis', 'Web interface estimator'], ar: ['معالجة البيانات المسبقة', 'هندسة الميزات', 'تحليل خصائص العقار (المساحة، الموقع، الخ)', 'حاسبة أسعار ويب'] },
-      challenges: { en: 'Handling diverse real estate data parameters in the Indian market.', ar: 'التعامل مع متغيرات بيانات العقارات المتنوعة في السوق الهندي.' },
-      results: { en: 'Accurate estimated property prices delivered to users.', ar: 'توفير أسعار تقديرية دقيقة للعقارات للمستخدمين.' }
+      overview: { en: 'Tabular Regression for Real Estate Pricing.', ar: 'تنبؤ بأسعار العقارات من بيانات جدولية.' },
+      problem: { en: 'Pricing homes consistently across variable property features.', ar: 'توقع السعر العادل للعقار بناءً على المساحة والموقع.' },
+      solution: { en: 'Scikit-learn regression pipeline serialized with Joblib and called via API/UI.', ar: 'نموذج انحدار Scikit-learn محفوظ بـ Joblib ومربوط بواجهة API/UI.' },
+      architecture: { en: 'Python data script + React SPA UI.', ar: 'سكربت بايثون لتحليل البيانات + واجهة React.' },
+      features: { en: ['Data EDA plots', 'Feature scaling', 'Live estimate UI'], ar: ['رسوم تحليل استكشافي', 'تحجيم الميزات', 'حاسبة فورية'] },
+      challenges: { en: 'Outliers and categorical cardinality in real estate CSV dumps.', ar: 'القيم الشاذة والمتغيرات النصية الكثيرة في الـ CSV.' },
+      results: { en: 'Clean baseline estimations for property valuation queries.', ar: 'تقديرات سريعة وممنهجة لسعر العقار.' }
     }
   },
   {
@@ -152,12 +144,12 @@ export const initialProjects: Project[] = [
     slug: 'bayan-ai',
     title: { en: 'Bayan AI', ar: 'بيان للذكاء الاصطناعي (Bayan AI)' },
     shortDescription: { 
-      en: 'Cross-cultural communication assistant rewriting professional messages respecting cultural etiquette via RAG.', 
-      ar: 'مساعد تواصل عابر للثقافات يعيد صياغة الرسائل المهنية لتناسب الإيتيكيت الثقافي باستخدام RAG.' 
+      en: 'Cross-cultural message rewriter using FAISS vector retrieval and Qwen 2.5.', 
+      ar: 'مساعد إعادة صياغة رسائل مهنية مراعاةً للثقافات بـ FAISS ونموذج Qwen 2.5.' 
     },
     fullDescription: { 
-      en: 'Bayan AI uses a RAG pipeline and Qwen 2.5 to generate context-aware professional responses, cultural warnings, and compatibility scores.', 
-      ar: 'يستخدم بيان RAG ونموذج Qwen 2.5 لتوليد ردود مهنية تراعي السياق الثقافي، مع تقديم تحذيرات ثقافية وتقييم للتوافق.' 
+      en: 'Retrieves cultural etiquette guidelines via FAISS and prompts Qwen 2.5 to adapt email tone per target culture.', 
+      ar: 'يسترجع قواعد الإيتيكيت الثقافي عبر FAISS ويطلب من Qwen 2.5 تعديل تالون الإيميل حسب البلد.' 
     },
     category: 'ai',
     featured: true,
@@ -165,16 +157,17 @@ export const initialProjects: Project[] = [
     published: true,
     image: bayanImg, 
     gallery: [],
-    technologies: ['Python', 'FastAPI', 'React', 'Vite', 'TypeScript', 'Tailwind CSS', 'Qwen 2.5', 'Hugging Face', 'RAG', 'Embeddings', 'FAISS'],
+    technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'Tailwind CSS', 'Qwen 2.5', 'FAISS', 'Embeddings'],
     githubUrl: 'https://github.com/Tiger0x01/Bayan-AI',
+    liveDemoUrl: 'https://bayan.dpdns.org/',
     caseStudy: {
-      overview: { en: 'Cross-Cultural Communication Assistant.', ar: 'مساعد تواصل مهني عابر للثقافات.' },
-      problem: { en: 'Cultural misunderstandings in international professional communication.', ar: 'سوء الفهم الثقافي في التواصل المهني الدولي.' },
-      solution: { en: 'RAG system retrieving cultural knowledge to guide Qwen 2.5 message rewriting.', ar: 'نظام RAG يسترجع المعرفة الثقافية لتوجيه Qwen 2.5 في إعادة صياغة الرسالة.' },
-      architecture: { en: 'FastAPI + FAISS + Qwen 2.5 + React UI.', ar: 'FastAPI مع قاعدة بيانات FAISS ونموذج Qwen 2.5 وواجهة React.' },
-      features: { en: ['Cultural message rewriting', 'Etiquette suggestions', 'Cultural warnings', 'Compatibility score'], ar: ['إعادة صياغة الرسائل ثقافياً', 'اقتراحات الإيتيكيت', 'تحذيرات ثقافية', 'درجة التوافق الثقافي'] },
-      challenges: { en: 'Preserving the original meaning while altering the cultural tone.', ar: 'الحفاظ على المعنى الأصلي للرسالة مع تغيير التون الثقافي.' },
-      results: { en: 'Context-aware professional responses tailored to different countries.', ar: 'ردود مهنية تراعي السياق ومخصصة لثقافات الدول المختلفة.' }
+      overview: { en: 'RAG-based Cross-Cultural Communication Tool.', ar: 'أداة تواصل مهني عابرة للثقافات بـ RAG.' },
+      problem: { en: 'Direct email phrasing can sound rude or blunt across international business cultures.', ar: 'طريقة الكتابة المباشرة قد تظهر بجفاء أو عدم إيتيكيت ثقافي.' },
+      solution: { en: 'FAISS context lookup + structured prompt engineering for tone adjustment.', ar: 'بحث شعاعي في قواعد الثقافات + توجيه دقيق للنموذج.' },
+      architecture: { en: 'FastAPI + FAISS + Qwen 2.5 + React UI.', ar: 'FastAPI مع FAISS و Qwen 2.5 و React.' },
+      features: { en: ['Culture selection', 'Tone adjustment', 'Etiquette notes'], ar: ['اختيار الثقافة المستهدفة', 'تعديل التون', 'ملاحظات إيتيكيت'] },
+      challenges: { en: 'Balancing polite rephrasing without losing core technical/business meaning.', ar: 'تعديل التون بدون تغيير أصل المعنى أو الأرقام.' },
+      results: { en: 'Context-safe rephrased messages ready to copy.', ar: 'رسائل معدلة ومناسبة للسياق الثقافي.' }
     }
   },
   {
@@ -182,12 +175,12 @@ export const initialProjects: Project[] = [
     slug: 'nosoos-bot',
     title: { en: 'NosoosBot', ar: 'نصوص بوت (NosoosBot)' },
     shortDescription: { 
-      en: 'AI Telegram bot extracting, translating, and summarizing YouTube transcripts via Llama 3.3.', 
-      ar: 'بوت تيليجرام لاستخراج وترجمة وتلخيص نصوص يوتيوب بالذكاء الاصطناعي (Llama 3.3).' 
+      en: 'Async Telegram bot extracting, translating, and summarizing long YouTube videos via Llama 3.3.', 
+      ar: 'بوت تيليجرام يسحب يوتيوب يترجم ويلخص الفيديوهات الطويلة بـ Llama 3.3.' 
     },
     fullDescription: { 
-      en: 'NosoosBot supports multiple languages, async processing, rate limiting, and Map-Reduce summarization for long YouTube videos.', 
-      ar: 'يدعم بوت نصوص لغات متعددة، والمعالجة غير المتزامنة، وتلخيص الفيديوهات الطويلة جداً عبر خوارزمية Map-Reduce.' 
+      en: 'Handles async caption extraction, Map-Reduce chunk summaries for long videos, and file exports (TXT/PDF/DOCX).', 
+      ar: 'يسحب الترجمة، يقسم الفيديوهات الطويلة بـ Map-Reduce للتلخيص، ويصدر ملفات TXT/PDF/DOCX.' 
     },
     category: 'ai',
     featured: true,
@@ -195,16 +188,16 @@ export const initialProjects: Project[] = [
     published: true,
     image: nosoosImg, 
     gallery: [],
-    technologies: ['Python', 'Aiogram', 'aiohttp', 'youtube-transcript-api', 'Groq API', 'Llama 3.3 70B', 'FPDF', 'python-docx', 'cachetools', 'dotenv'],
+    technologies: ['Python', 'Aiogram', 'youtube-transcript-api', 'Groq API', 'Llama 3.3 70B', 'FPDF', 'python-docx'],
     githubUrl: 'https://github.com/Tiger0x01/NosoosBot',
     caseStudy: {
-      overview: { en: 'AI YouTube Transcript & Summarization Bot.', ar: 'بوت تيليجرام لتلخيص نصوص يوتيوب.' },
-      problem: { en: 'Extracting insights from long YouTube videos efficiently.', ar: 'صعوبة استخراج الرؤى السريعة من فيديوهات يوتيوب الطويلة.' },
-      solution: { en: 'Automated transcript extraction and Map-Reduce AI summarization.', ar: 'استخراج آلي للنصوص وتلخيص ذكي بتقنية Map-Reduce.' },
-      architecture: { en: 'Async Aiogram + Groq API (Llama 3.3) + Caching.', ar: 'مكتبة Aiogram غير المتزامنة + Groq API ونظام تخزين مؤقت.' },
-      features: { en: ['YouTube caption extraction', 'Translation & Cleaning', 'Map-Reduce Summarization', 'TXT/PDF/DOCX exports'], ar: ['استخراج ترجمات يوتيوب', 'التنظيف والترجمة', 'التلخيص المتقدم بـ Map-Reduce', 'تصدير بصيغ TXT/PDF/DOCX'] },
-      challenges: { en: 'Handling context limits for extremely long video transcripts.', ar: 'التعامل مع حدود سياق النماذج للفيديوهات الطويلة جداً.' },
-      results: { en: 'Fast, accurate, and exportable multilingual video summaries.', ar: 'ملخصات سريعة ودقيقة متعددة اللغات جاهزة للتصدير.' }
+      overview: { en: 'Async YouTube Transcript & Summarizer Bot.', ar: 'بوت تيليجرام لتلخيص يوتيوب.' },
+      problem: { en: 'Long video transcripts exceed token limits or take forever to read.', ar: 'الفيديوهات الطويلة تعطل حدود الـ Tokens وصعبة المتابعة.' },
+      solution: { en: 'Async transcription fetch + Map-Reduce summarization chunks via Groq/Llama 3.3.', ar: 'سحب غير متزامن للترجمة وتلخيص على دفعات Map-Reduce.' },
+      architecture: { en: 'Aiogram bot + Groq API + local doc/PDF generators.', ar: 'بوت Aiogram مع Groq API ومولدات مستندات.' },
+      features: { en: ['Transcript cleaning', 'Map-Reduce summary', 'Export to PDF/DOCX'], ar: ['تنظيف النصوص', 'تلخيص Map-Reduce', 'تصدير PDF/DOCX'] },
+      challenges: { en: 'Managing API rate limits and chunk boundary context drops.', ar: 'إدارة الـ Rate limits وحدود تقسيم النصوص.' },
+      results: { en: 'Fast multi-format summaries delivered directly in chat.', ar: 'ملخصات سريعة ومنسقة مباشرة في الشات.' }
     }
   },
   {
@@ -212,12 +205,12 @@ export const initialProjects: Project[] = [
     slug: 'library-management',
     title: { en: 'Library Management System', ar: 'نظام إدارة المكتبات' },
     shortDescription: { 
-      en: 'Web-based application in Native PHP/MySQL to manage physical and digital library services.', 
-      ar: 'تطبيق ويب بـ PHP و MySQL لإدارة خدمات المكتبة الفعلية والرقمية.' 
+      en: 'Native PHP/MySQL web app for physical book borrowing and digital PDF purchases.', 
+      ar: 'تطبيق ويب بـ PHP و MySQL لإدارة استعارة الكتب الورقية وشراء الـ PDFs.' 
     },
     fullDescription: { 
-      en: 'The system provides separate portals for librarians and students, handling book inventory, borrowing, and digital PDF purchasing.', 
-      ar: 'نظام متكامل يقدم بوابات منفصلة لأمناء المكتبة والطلاب، ويدير مخزون الكتب والإعارة وشراء النسخ الرقمية (PDF).' 
+      en: 'Role-based portals for librarians and students handling inventory, due dates, and digital catalog checkout.', 
+      ar: 'بوابات منفصلة لأمناء المكتبة والطلاب للتحكم بالمخزون، الإعارة، وشراء النسخ الرقمية.' 
     },
     category: 'web',
     featured: false,
@@ -228,13 +221,13 @@ export const initialProjects: Project[] = [
     technologies: ['Native PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com/Tiger0x01/Library-Management-System',
     caseStudy: {
-      overview: { en: 'Web-based Library Management.', ar: 'نظام إدارة مكتبات عبر الويب.' },
-      problem: { en: 'Manual tracking of library inventory, physical borrowing, and digital sales.', ar: 'التتبع اليدوي لمخزون المكتبة والإعارة والمبيعات الرقمية.' },
-      solution: { en: 'Dedicated librarian and student portals connected to a relational database.', ar: 'بوابات مخصصة للطلاب وأمناء المكتبة متصلة بقاعدة بيانات علائقية.' },
-      architecture: { en: 'Native PHP backend with MySQL database.', ar: 'خلفية Native PHP مع قاعدة بيانات MySQL.' },
-      features: { en: ['Librarian & Student portals', 'Inventory management', 'Borrowing & Returns', 'Digital PDF purchasing', 'Sales analytics'], ar: ['بوابة للطلاب والأمناء', 'إدارة المخزون', 'الإعارة والإرجاع', 'شراء كتب PDF رقمية', 'تحليلات المبيعات'] },
-      challenges: { en: 'Managing dual services (physical books and digital PDFs) in one system.', ar: 'إدارة الخدمات المزدوجة (كتب ورقية ورقمية) في نظام واحد.' },
-      results: { en: 'Streamlined library operations and clear analytics.', ar: 'تبسيط عمليات المكتبة وعرض تحليلات واضحة.' }
+      overview: { en: 'Dual-mode Library Operations Portal.', ar: 'نظام إدارة مكتبات ورقي ورقمي.' },
+      problem: { en: 'Tracking physical book loans alongside digital store checkouts.', ar: 'إدارة الإعارة الورقية مع مبيعات الكتب الرقمية في مكان واحد.' },
+      solution: { en: 'Relational MySQL schema with clean PHP session-based roles.', ar: 'قاعدة بيانات علائقية MySQL مع صلاحيات PHP مبسطة.' },
+      architecture: { en: 'Native PHP procedural/OOP structure + MySQL.', ar: 'هيكلية PHP صافي مع MySQL.' },
+      features: { en: ['Librarian desk', 'Student catalog', 'Borrow logs'], ar: ['لوحة الأمين', 'كتالوج الطلاب', 'سجلات الإعارة'] },
+      challenges: { en: 'Handling inventory decrement sync for mixed physical/digital items.', ar: 'مزامنة المخزون بين النسخ الورقية والرقمية.' },
+      results: { en: 'Functional portal managing checkouts and basic reporting.', ar: 'نظام شغال لإدارة الاستعارات والتقارير البسيطة.' }
     }
   },
   {
@@ -242,12 +235,12 @@ export const initialProjects: Project[] = [
     slug: 'monkey-banana',
     title: { en: 'Monkey & Banana Problem', ar: 'محاكاة القرد والموز (AI BFS)' },
     shortDescription: { 
-      en: 'Interactive AI simulation demonstrating the Breadth-First Search (BFS) algorithm.', 
-      ar: 'محاكاة تفاعلية للذكاء الاصطناعي توضح عمل خوارزمية البحث بالاتساع (BFS).' 
+      en: 'Interactive Python/Tkinter visualizer for state-space search (BFS algorithm).', 
+      ar: 'محاكاة تفاعلية بـ Python و Tkinter تبين خطوات البحث بالاتساع (BFS).' 
     },
     fullDescription: { 
-      en: 'A visual solver for the classic AI problem featuring movement, jumping, box pushing, and gravity via a Tkinter interface.', 
-      ar: 'حل مرئي للمشكلة الكلاسيكية في الذكاء الاصطناعي، يوضح آليات الحركة، القفز، ودفع الصندوق باستخدام واجهة Tkinter.' 
+      en: 'Animates box-pushing, climbing, and pathfinding state transitions step-by-step.', 
+      ar: 'يحرك الخطوات (دفع الصندوق، القفز، الوصول للموز) خطوة بخطوة بالواجهة.' 
     },
     category: 'research',
     featured: false,
@@ -259,13 +252,13 @@ export const initialProjects: Project[] = [
     githubUrl: 'https://github.com/Tiger0x01/Monkey-and-Banana-problem',
     liveDemoUrl: 'https://Tiger0x01.github.io/Monkey-and-Banana-problem/',
     caseStudy: {
-      overview: { en: 'BFS Algorithm Simulation.', ar: 'محاكاة خوارزمية BFS.' },
-      problem: { en: 'Visualizing state-space search for a goal-oriented AI problem.', ar: 'تصوير مرئي للبحث في فضاء الحالة (State-space) لمشكلة ذكاء اصطناعي.' },
-      solution: { en: 'Interactive GUI animating the BFS resolution steps.', ar: 'واجهة رسومية تفاعلية تحرك خطوات الحل بناءً على خوارزمية BFS.' },
-      architecture: { en: 'Python algorithmic logic wrapped in Tkinter GUI.', ar: 'منطق خوارزمي بـ Python داخل واجهة رسومية Tkinter.' },
-      features: { en: ['BFS pathfinding', 'State animations', 'Physics simulation (gravity/pushing)'], ar: ['إيجاد المسار بـ BFS', 'تحريك الحالات', 'محاكاة فيزيائية مبسطة'] },
-      challenges: { en: 'Synchronizing GUI animations with algorithm state changes.', ar: 'مزامنة الرسوم المتحركة في الواجهة مع تغيرات حالة الخوارزمية.' },
-      results: { en: 'Educational visualization of classic AI search.', ar: 'تصوير تعليمي ناجح لعمليات البحث في الذكاء الاصطناعي.' }
+      overview: { en: 'Visualizing State-Space Search.', ar: 'تمثيل بصري لبحث فضاء الحالة.' },
+      problem: { en: 'Classic AI search algorithms are hard to visualize abstractly.', ar: 'خوارزميات البحث الكلاسيكية صعبة التخيل نظرياً.' },
+      solution: { en: 'Tkinter frame animation stepping through BFS queue states.', ar: 'رسوم متحركة توضح طابور الـ BFS وحالة المشكلة.' },
+      architecture: { en: 'Python BFS search generator + Tkinter GUI loop.', ar: 'منطق BFS مع لوب واجهة Tkinter.' },
+      features: { en: ['Step-by-step playback', 'State logger', 'Grid movement'], ar: ['تشغيل خطوة بخطوة', 'عرض الحالة', 'حركة على الشبكة'] },
+      challenges: { en: 'Freezing GUI thread during loop execution (handled via after/async state steps).', ar: 'منع تجميد الواجهة أثناء اللوب.' },
+      results: { en: 'Clean educational visualization for search algorithms.', ar: 'محاكاة تعليمية واضحة لخوارزمية البحث.' }
     }
   },
   {
@@ -273,12 +266,12 @@ export const initialProjects: Project[] = [
     slug: 'hand-gesture',
     title: { en: 'Hand Gesture Recognition', ar: 'التعرف على إشارات اليد' },
     shortDescription: { 
-      en: 'Real-time sign-language detection system using MediaPipe and Random Forest.', 
-      ar: 'نظام فوري لاكتشاف إشارات لغة اليد باستخدام MediaPipe و Random Forest.' 
+      en: 'Real-time sign language classifier using 21 MediaPipe hand landmarks and Random Forest.', 
+      ar: 'صنف إشارات اليد الفوري باستخدام 21 علامة حيوية من MediaPipe و Random Forest.' 
     },
     fullDescription: { 
-      en: 'Extracts 21 hand landmarks, converts them to numerical features, and classifies gestures in real-time via a Streamlit interface.', 
-      ar: 'يستخرج 21 علامة حيوية لليد، ويحولها لخصائص رقمية لتصنيف الإشارات بالوقت الفعلي عبر كاميرا وتطبيق Streamlit.' 
+      en: 'Extracts 3D hand keypoints per frame, flattens features, and runs inference via Streamlit camera feed.', 
+      ar: 'يستخرج 21 نقطة لليد من الكاميرا، يحولها لمتجهات، ويتوقع الإشارة فوراً بـ Streamlit.' 
     },
     category: 'ai',
     featured: false,
@@ -290,13 +283,13 @@ export const initialProjects: Project[] = [
     githubUrl: 'https://github.com/Tiger0x01/Hand-Gesture-Recognition-System',
     liveDemoUrl: 'https://depi-sign-language-project.streamlit.app/',
     caseStudy: {
-      overview: { en: 'Real-time Hand Gesture CV System.', ar: 'نظام رؤية حاسوبية لإشارات اليد بالوقت الفعلي.' },
-      problem: { en: 'Translating sign language gestures into machine-readable data instantly.', ar: 'ترجمة إشارات لغة اليد إلى بيانات مقروءة آلياً بشكل فوري.' },
-      solution: { en: 'MediaPipe landmark tracking fed into a trained Random Forest classifier.', ar: 'تتبع العلامات الحيوية بـ MediaPipe وإدخالها لمصنف Random Forest.' },
-      architecture: { en: 'OpenCV capture + MediaPipe extraction + Scikit-learn + Streamlit UI.', ar: 'التقاط بـ OpenCV + استخراج بـ MediaPipe + واجهة Streamlit.' },
-      features: { en: ['Real-time hand tracking', 'Custom dataset collection', 'Landmark extraction', 'Live camera classification'], ar: ['تتبع فوري لليد', 'تجميع بيانات مخصصة', 'استخراج 42 ميزة رقمية', 'تصنيف حي عبر الكاميرا'] },
-      challenges: { en: 'Ensuring low-latency processing in a browser/Streamlit environment.', ar: 'ضمان معالجة منخفضة الكمون عبر بيئة Streamlit.' },
-      results: { en: 'Lightweight and accurate sign-language word detection.', ar: 'نظام خفيف ودقيق لاكتشاف كلمات لغة الإشارة.' }
+      overview: { en: 'Live Landmark-based Gesture Classification.', ar: 'تصنيف إشارات اليد بالوقت الفعلي.' },
+      problem: { en: 'High-latency custom sign detection in lightweight browser deployments.', ar: 'تقليل البث والكمون في اكتشاف لغة الإشارة من الويب.' },
+      solution: { en: 'MediaPipe landmark extraction feeding a pre-trained Random Forest model.', ar: 'استخراج العلامات بـ MediaPipe مع تصنيف Random Forest خفيف.' },
+      architecture: { en: 'OpenCV frame loop -> MediaPipe -> Scikit-learn predict -> Streamlit UI.', ar: 'لوب الكاميرا + استخراج علامات + تصنيف + واجهة.' },
+      features: { en: ['Live webcam tracking', 'Landmark plotting', 'Fast inference'], ar: ['تتبع كاميرا حي', 'رسم المفاصل', 'استنتاج سريع'] },
+      challenges: { en: 'Lighting variations and hand angle jitter.', ar: 'اختلاف الإضاءة واهتزاز زاوية اليد.' },
+      results: { en: 'Low-latency working sign gesture demo.', ar: 'ديمو خفيف وسريع لاكتشاف الإشارات.' }
     }
   },
   {
@@ -304,12 +297,12 @@ export const initialProjects: Project[] = [
     slug: 'customer-segmentation',
     title: { en: 'Customer Segmentation', ar: 'تقسيم عملاء البطاقات الائتمانية' },
     shortDescription: { 
-      en: 'Data science project analyzing customer behavior using K-Means clustering and PCA.', 
-      ar: 'مشروع علم بيانات لتحليل سلوك العملاء باستخدام تجميع K-Means وتقليل الأبعاد PCA.' 
+      en: 'Unsupervised credit card customer clustering using K-Means, PCA, and DBSCAN outlier checks.', 
+      ar: 'تجميع عملاء البطاقات الائتمانية بـ K-Means وتقليل الأبعاد PCA وكشف الشواذ بـ DBSCAN.' 
     },
     fullDescription: { 
-      en: 'Explores credit card data through EDA, feature engineering, K-Means clustering, DBSCAN outlier detection, and predictive modeling.', 
-      ar: 'يستكشف بيانات البطاقات عبر التحليل الاستكشافي، التجميع، كشف القيم الشاذة بـ DBSCAN، والتصنيف التنبؤي.' 
+      en: 'Performs EDA, feature scaling, optimal K selection (Elbow/Silhouette), and behavioral cluster profiling.', 
+      ar: 'تحليل استكشافي، تحجيم ميزات، اختيار K الأمثل، وتحليل خصائص الشرائح.' 
     },
     category: 'ml',
     featured: false,
@@ -317,110 +310,105 @@ export const initialProjects: Project[] = [
     published: true,
     image: creditImg,
     gallery: [],
-    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'K-Means', 'DBSCAN', 'PCA', 'Random Forest', 'Data Visualization'],
+    technologies: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'K-Means', 'DBSCAN', 'PCA'],
     githubUrl: 'https://github.com/Tiger0x01/Credit-Card-Customers-Project',
     caseStudy: {
-      overview: { en: 'Credit Card Customer Analysis.', ar: 'تحليل عملاء البطاقات الائتمانية.' },
-      problem: { en: 'Understanding underlying behavioral groups in unstructured financial data.', ar: 'فهم السلوكيات الضمنية للعملاء في البيانات المالية.' },
-      solution: { en: 'Unsupervised ML clustering paired with dimensionality reduction for clear insights.', ar: 'تجميع تعلم غير خاضع للإشراف مع تقليل الأبعاد لاستخراج رؤى واضحة.' },
-      architecture: { en: 'Python data science pipeline (Data Preprocessing -> EDA -> ML Models).', ar: 'خط أنابيب علم بيانات بايثون (معالجة -> تحليل استكشافي -> نمذجة).' },
-      features: { en: ['EDA & Feature Engineering', 'K-Means Segmentation', 'PCA Dimensionality Reduction', 'DBSCAN Outlier Detection', 'Predictive Modeling'], ar: ['تحليل استكشافي وهندسة ميزات', 'تقسيم بـ K-Means', 'تقليل أبعاد بـ PCA', 'كشف شواذ بـ DBSCAN', 'نمذجة تنبؤية'] },
-      challenges: { en: 'Handling high-dimensional feature spaces and detecting subtle outliers.', ar: 'التعامل مع البيانات عالية الأبعاد واكتشاف القيم الشاذة الدقيقة.' },
-      results: { en: 'Distinct behavioral clusters identified for targeted financial strategies.', ar: 'تحديد شرائح سلوكية واضحة يمكن استهدافها باستراتيجيات مالية.' }
+      overview: { en: 'Unsupervised Financial Profiling.', ar: 'تحليل وتجميع سلوك العملاء الماليين.' },
+      problem: { en: 'Grouping heterogeneous credit card usage patterns without explicit labels.', ar: 'تحديد أنماط الإنفاق بدون بيانات مصنفة مسبقاً.' },
+      solution: { en: 'Standard scaling + PCA reduction + K-Means cluster profiling.', ar: 'تجهيز بيانات + تقليل أبعاد PCA + تجميع K-Means.' },
+      architecture: { en: 'Jupyter/Python data analysis pipeline.', ar: 'سكربت تحليل بيانات بايثون.' },
+      features: { en: ['Elbow method plot', 'PCA scatter plot', 'Cluster stats summary'], ar: ['رسم Elbow', 'توزيع PCA', 'ملخص إحصائي للشرائح'] },
+      challenges: { en: 'Choosing optimal cluster count on skewed transaction amounts.', ar: 'اختيار عدد الكتل المناسب مع اعوجاج بيانات التشتت المالي.' },
+      results: { en: 'Actionable customer behavioral segments.', ar: 'تحديد شرائح عملاء واضحة.' }
     }
   }
 ];
-
 
 export const initialSkills: SkillCategory[] = [
   {
     id: 'cat-languages',
     title: { en: '01 / LANGUAGES', ar: '01 / لغات البرمجة' },
-    description: { en: 'Core programming languages', ar: 'لغات التطوير الأساسية' },
+    description: { en: 'Core languages', ar: 'لغات التطوير الأساسية' },
     skills: [
-      { name: 'Python', level: 'Expert', focus: { en: 'Backend & AI scripts', ar: 'الباك إند وسكربتات الذكاء الاصطناعي' } },
-      { name: 'SQL', level: 'Proficient', focus: { en: 'Database querying & design', ar: 'استعلامات وتصميم قواعد البيانات' } },
-      { name: 'C++', level: 'Intermediate', focus: { en: 'Performance logic', ar: 'منطق الأداء العالي' } },
-      { name: 'PHP', level: 'Intermediate', focus: { en: 'Web applications', ar: 'تطبيقات الويب' } },
+      { name: 'Python', level: 'Expert', focus: { en: 'AI/ML & backend scripts', ar: 'سكربتات الذكاء والباك إند' } },
+      { name: 'SQL', level: 'Proficient', focus: { en: 'Queries & DB design', ar: 'استعلامات وتصميم قواعد بيانات' } },
+      { name: 'C++', level: 'Intermediate', focus: { en: 'Logic & core DSA', ar: 'خوارزميات ومنطق أساسي' } },
+      { name: 'PHP', level: 'Intermediate', focus: { en: 'Legacy/native web apps', ar: 'تطبيقات الويب التقليدية' } },
     ]
   },
   {
     id: 'cat-ml',
     title: { en: '02 / MACHINE LEARNING', ar: '02 / تعلم الآلة' },
-    description: { en: 'Supervised/unsupervised algorithms & deep learning', ar: 'خوارزميات التعلم العميق والتقليدي' },
+    description: { en: 'Supervised/unsupervised models', ar: 'نماذج التعلم التقليدي والعميق' },
     skills: [
-      { name: 'Scikit-learn', level: 'Advanced', focus: { en: 'Classical ML & clustering', ar: 'التصنيف والتجميع الكلاسيكي' } },
-      { name: 'PyTorch', level: 'Advanced', focus: { en: 'Neural networks', ar: 'الشبكات العصبية العميقة' } },
-      { name: 'TensorFlow', level: 'Intermediate', focus: { en: 'Deep learning models', ar: 'نماذج التعلم العميق' } },
+      { name: 'Scikit-learn', level: 'Advanced', focus: { en: 'Regression, clustering, preprocessing', ar: 'الانحدار والتجميع والمعالجة' } },
+      { name: 'PyTorch', level: 'Advanced', focus: { en: 'Neural network training', ar: 'تدريب الشبكات العصبية' } },
+      { name: 'TensorFlow', level: 'Intermediate', focus: { en: 'Model loading/inference', ar: 'استنتاج وتدريب نماذج' } },
     ]
   },
   {
     id: 'cat-genai',
-    title: { en: '03 / GENERATIVE AI & NLP', ar: '03 / الذكاء الاصطناعي التوليدي و NLP' },
-    description: { en: 'LLMs, RAG, and vector retrieval', ar: 'نماذج اللغة الكبيرة وأنظمة الاسترجاع' },
+    title: { en: '03 / GENERATIVE AI & RAG', ar: '03 / الذكاء التوليدي و RAG' },
+    description: { en: 'LLMs, vector search, prompting', ar: 'نماذج اللغة والبحث الشعاعي' },
     skills: [
-      { name: 'RAG', level: 'Expert', focus: { en: 'Vector search & context retrieval', ar: 'البحث والاسترجاع الشعاعي' } },
-      { name: 'LLMs', level: 'Advanced', focus: { en: 'Fine-tuning & prompting', ar: 'توجيه وضبط النماذج الكبيرة' } },
-      { name: 'Hugging Face', level: 'Proficient', focus: { en: 'Transformer pipelines', ar: 'مكتبات وتحويلات Hugging Face' } },
-      { name: 'FAISS', level: 'Advanced', focus: { en: 'Vector databases', ar: 'قواعد البيانات الشعاعية' } },
-      { name: 'Prompt Engineering', level: 'Expert', focus: { en: 'Structured generation', ar: 'هندسة الأوامر المتقدمة' } },
+      { name: 'RAG', level: 'Expert', focus: { en: 'Vector retrieval & context injection', ar: 'استرجاع السياق الشعاعي' } },
+      { name: 'LLMs', level: 'Advanced', focus: { en: 'API integration & fine-tuning basics', ar: 'تكامل نماذج وتوجيه' } },
+      { name: 'FAISS', level: 'Advanced', focus: { en: 'Vector search index', ar: 'فهرسة البحث الشعاعي' } },
+      { name: 'Prompt Engineering', level: 'Expert', focus: { en: 'Structured outputs & system prompts', ar: 'هندسة الأوامر وهيكلة المخرجات' } },
     ]
   },
   {
     id: 'cat-cv',
     title: { en: '04 / COMPUTER VISION', ar: '04 / الرؤية الحاسوبية' },
-    description: { en: 'Real-time video & image processing', ar: 'معالجة الصور والفيديو بالوقت الفعلي' },
+    description: { en: 'Video/image processing', ar: 'معالجة الفيديو والصور' },
     skills: [
-      { name: 'OpenCV', level: 'Advanced', focus: { en: 'Image processing pipelines', ar: 'معالجة إطارات الفيديو والصور' } },
-      { name: 'MediaPipe', level: 'Advanced', focus: { en: 'Pose & landmark tracking', ar: 'تتبع المفاصل والعلامات الحيوية' } },
+      { name: 'OpenCV', level: 'Advanced', focus: { en: 'Image transforms & video frames', ar: 'معالجة إطارات الفيديو' } },
+      { name: 'MediaPipe', level: 'Advanced', focus: { en: 'Pose/hand landmarks', ar: 'تتبع المفاصل والعلامات' } },
     ]
   },
   {
     id: 'cat-backend',
-    title: { en: '05 / BACKEND & WEB', ar: '05 / الويب والباك إند' },
-    description: { en: 'Full-stack & high-speed APIs', ar: 'تطوير الويب وواجهات البرمجة' },
+    title: { en: '05 / BACKEND & WEB', ar: '05 / الباك إند والويب' },
+    description: { en: 'APIs & full-stack fundamentals', ar: 'واجهات برمجة وويب' },
     skills: [
-      { name: 'FastAPI', level: 'Advanced', focus: { en: 'High-speed AI/REST APIs', ar: 'واجهات برمجة سريعة للذكاء الاصطناعي' } },
-      { name: 'Django', level: 'Proficient', focus: { en: 'Full-stack web apps', ar: 'تطبيقات الويب المتكاملة' } },
-      { name: 'React', level: 'Proficient', focus: { en: 'Frontend UI architecture', ar: 'واجهات المستخدم الأمامية' } },
-      { name: 'TypeScript', level: 'Proficient', focus: { en: 'Type-safe web apps', ar: 'تطوير آمن الأنواع' } },
-      { name: 'PostgreSQL', level: 'Proficient', focus: { en: 'Relational data modeling', ar: 'نمذجة وقواعد بيانات علائقية' } },
+      { name: 'FastAPI', level: 'Advanced', focus: { en: 'High-speed AI model endpoints', ar: 'واجهات سريعة لنماذج الذكاء' } },
+      { name: 'Django', level: 'Proficient', focus: { en: 'ORM, auth, & full-stack apps', ar: 'إدارة قواعد بيانات ومصادقة' } },
+      { name: 'React', level: 'Proficient', focus: { en: 'Frontend UI integration', ar: 'ربط واجهات المستخدم' } },
+      { name: 'PostgreSQL', level: 'Proficient', focus: { en: 'Relational data modeling', ar: 'نمذجة بيانات علائقية' } },
     ]
   },
   {
     id: 'cat-data',
     title: { en: '06 / DATA', ar: '06 / معالجة البيانات' },
-    description: { en: 'Data manipulation and analysis', ar: 'تحليل ومعالجة البيانات' },
+    description: { en: 'Data wrangling', ar: 'تنظيف وتحليل البيانات' },
     skills: [
-      { name: 'Pandas', level: 'Advanced', focus: { en: 'Data wrangling & tabular analysis', ar: 'تنظيف وتحليل الجداول والبيانات' } },
-      { name: 'NumPy', level: 'Advanced', focus: { en: 'Numerical computing', ar: 'الحوسبة العددية والمصفوفات' } },
+      { name: 'Pandas', level: 'Advanced', focus: { en: 'Tabular cleaning & merging', ar: 'تنظيف ودمج الجداول' } },
+      { name: 'NumPy', level: 'Advanced', focus: { en: 'Array math', ar: 'العمليات الحسابية المصفوفية' } },
     ]
   },
   {
     id: 'cat-cloud',
     title: { en: '07 / CLOUD & MLOPS', ar: '07 / السحابيات و MLOps' },
-    description: { en: 'Deployment, tracking & infrastructure', ar: 'النشر وتتبع التجارب والبنية التحتية' },
+    description: { en: 'Deployment & tooling', ar: 'النشر والأدوات' },
     skills: [
-      { name: 'Azure AI', level: 'Intermediate', focus: { en: 'Cloud ML pipelines', ar: 'خطوط الأنابيب السحابية' } },
-      { name: 'MLflow', level: 'Intermediate', focus: { en: 'Experiment tracking', ar: 'تتبع التجارب وإصدار النماذج' } },
-      { name: 'Docker', level: 'Intermediate', focus: { en: 'Containerization', ar: 'الحاويات والتشغيل المعياري' } },
+      { name: 'Azure AI', level: 'Intermediate', focus: { en: 'Cloud ML workspaces', ar: 'مساحات عمل سحابية' } },
+      { name: 'MLflow', level: 'Intermediate', focus: { en: 'Experiment logging', ar: 'تسجيل وتتبع التجارب' } },
       { name: 'Git', level: 'Proficient', focus: { en: 'Version control', ar: 'إدارة الإصدارات' } },
-      { name: 'Linux', level: 'Intermediate', focus: { en: 'System operations', ar: 'إدارة أنظمة Linux' } },
+      { name: 'Linux', level: 'Intermediate', focus: { en: 'CLI & system basics', ar: 'أوامر النظام والتشغيل' } },
     ]
   }
 ];
-
 
 export const initialPublications: PublicationItem[] = [
   {
     id: 'pub-1',
     type: 'article',
-    title: { en: 'AI Systems Integration', ar: 'تكامل أنظمة الذكاء الاصطناعي' },
-    source: { en: 'Tech Review', ar: 'مجلة التقنية' },
+    title: { en: 'AI Systems Integration Notes', ar: 'ملاحظات حول تكامل أنظمة الذكاء الاصطناعي' },
+    source: { en: 'Tech Notes', ar: 'مدونة تقنية' },
     date: { en: '2026', ar: '2026' },
     tag: { en: 'Article', ar: 'مقال' },
     link: '#',
-    actionText: { en: 'Read Article', ar: 'قراءة المقال' }
+    actionText: { en: 'Read Note', ar: 'قراءة الملاحظة' }
   }
 ];
 
@@ -428,8 +416,8 @@ export const initialApproach: ApproachPillar[] = [
   {
     id: 'app-1',
     number: '01',
-    title: { en: 'Strategic Analysis', ar: 'التحليل الاستراتيجي' },
-    description: { en: 'Understand core constraints before code.', ar: 'فهم القيود الأساسية قبل كتابة الكود.' },
-    highlights: { en: ['Requirements', 'Scope'], ar: ['المتطلبات', 'النطاق'] }
+    title: { en: 'Practical Scope First', ar: 'التركيز على المشكلة أولاً' },
+    description: { en: 'Understand data constraints and latency limits before writing model training scripts.', ar: 'فهم حدود البيانات والكمون قبل كتابة كود التدريب.' },
+    highlights: { en: ['Data Check', 'Baseline First'], ar: ['فحص البيانات', 'Baseline أولاً'] }
   }
 ];

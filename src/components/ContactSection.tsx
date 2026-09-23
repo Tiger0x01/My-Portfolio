@@ -25,7 +25,6 @@ export const ContactSection: React.FC = () => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    // بناء رابط الmailto الحقيقي لإيصال الرسالة لبريدك
     const subjectEncoded = encodeURIComponent(formData.subject || `Portfolio Inquiry from ${formData.name}`);
     const bodyEncoded = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -44,12 +43,22 @@ export const ContactSection: React.FC = () => {
         
         {/* Editorial Header */}
         <div className="space-y-4 mb-20">
-          <span className="text-xs font-mono uppercase tracking-[0.2em] opacity-40">
-            06 / {t.sectionTitle}
-          </span>
-          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05]">
-            {language === 'ar' ? 'لديك مشروع أو فرصة؟ لنناقشها.' : 'Have a project or opportunity? Let’s talk.'}
-          </h2>
+          <div className="inline-flex items-center gap-3 text-xs font-mono tracking-[0.25em] opacity-45 uppercase">
+            <span>06</span>
+            <span>—</span>
+            <span>{t.sectionTitle}</span>
+          </div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-balance"
+          >
+            {language === 'ar' ? 'عندك فكرة مشروع، فرصة، أو حابب ندردش؟' : 'Have a project or opportunity? Let’s talk.'}
+          </motion.h2>
+          <p className={`text-base sm:text-lg ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
+            {t.subtitle}
+          </p>
         </div>
 
         {/* Split layout: Direct contact + Editorial form */}
@@ -58,7 +67,7 @@ export const ContactSection: React.FC = () => {
           {/* Direct meta (4 cols) */}
           <div className="md:col-span-4 space-y-12 text-sm">
             <div className="space-y-3">
-              <div className="text-xs font-mono uppercase tracking-widest opacity-40">
+              <div className="text-[11px] font-mono uppercase tracking-[0.2em] opacity-45">
                 {t.directEmail}
               </div>
               <div className="flex items-center gap-3">
@@ -71,7 +80,7 @@ export const ContactSection: React.FC = () => {
                 <button
                   onClick={handleCopyEmail}
                   aria-label="Copy email"
-                  className="p-1.5 rounded-md hover:bg-current/5 transition-colors opacity-60 hover:opacity-100 shrink-0"
+                  className="p-1.5 rounded-lg border border-current/15 hover:bg-current/5 transition-all opacity-60 hover:opacity-100 shrink-0"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
@@ -84,10 +93,10 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <div className="space-y-3">
-              <div className="text-xs font-mono uppercase tracking-widest opacity-40">
+              <div className="text-[11px] font-mono uppercase tracking-[0.2em] opacity-45">
                 {language === 'ar' ? 'الشبكات المهنية' : 'Network'}
               </div>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-2">
                 {[
                   { name: 'GitHub', href: 'https://github.com/Tiger0x01', icon: <Github className="w-4 h-4" /> },
                   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/tiger0x01/', icon: <Linkedin className="w-4 h-4" /> }
@@ -97,7 +106,7 @@ export const ContactSection: React.FC = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-between py-2.5 border-b border-current/10 opacity-75 hover:opacity-100 transition-opacity group"
+                    className="inline-flex items-center justify-between py-3 border-b border-current/10 opacity-75 hover:opacity-100 transition-opacity group"
                   >
                     <div className="flex items-center gap-3">
                       <span className="opacity-70 group-hover:opacity-100 transition-opacity">{item.icon}</span>
@@ -116,10 +125,12 @@ export const ContactSection: React.FC = () => {
               <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
-                className="py-16 space-y-3 border-y border-current/10"
+                className={`py-16 px-8 rounded-2xl border space-y-3 ${
+                  isDark ? 'border-white/10 bg-white/[0.02]' : 'border-black/10 bg-black/[0.02]'
+                }`}
               >
-                <p className="text-2xl font-bold tracking-tight">
-                  {language === 'ar' ? 'تم تجهيز تطبيق البريد لإرسال رسالتك.' : 'Email client opened with your message.'}
+                <p className="text-xl sm:text-2xl font-bold tracking-tight">
+                  {language === 'ar' ? 'تم فتح تطبيق البريد وجاهز لإرسال رسالتك.' : 'Email client opened with your message.'}
                 </p>
                 <p className={`text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
                   {t.successMsg}
@@ -194,7 +205,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2 flex items-center justify-end">
                   <button
                     type="submit"
-                    className={`px-8 py-3.5 rounded-full text-xs font-mono font-bold uppercase tracking-widest transition-all flex items-center gap-2 ${
+                    className={`px-8 py-3.5 rounded-full text-xs font-mono font-bold uppercase tracking-widest transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2 ${
                       isDark
                         ? 'bg-white text-black hover:bg-neutral-200'
                         : 'bg-black text-white hover:bg-neutral-800'
